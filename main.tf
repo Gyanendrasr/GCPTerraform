@@ -5,7 +5,7 @@
 
 terraform {
   # To make sure the correct version of Terraform used
-  required_version = ">= 0.12.26"
+  required_version = ">= 0.12.24"
 }
 
 
@@ -44,11 +44,11 @@ resource "google_container_cluster" "primary" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 
-resource "google_container_node_pool" "default" {
+resource "google_container_node_pool" "node_pool" {
   name       = "${var.name}-node-pool"
   project    = var.project
   location   = var.location
-  cluster    = google_container_cluster.default.name
+  cluster    = google_container_cluster.primary.name
   node_count = 1
   
   autoscaling {
