@@ -3,11 +3,11 @@ variable "name" {
 }
 
 variable "project" {
-  default = "Python-Flask-Project "
+  default = "Python-Flask-Project"
 }
 
 variable "location" {
-  default = "us-central1"
+  default = "europe-north1"
 }
 
 variable "initial_node_count" {
